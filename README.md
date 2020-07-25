@@ -1,2 +1,2 @@
 # react-todo
-A very basic React ToDo web-app (under development)
+A basic React based ToDo web-app (under development)
