@@ -16,7 +16,7 @@ export class TodoItem extends Component {
 
 	render() {
 
-		const { Id, Title } = this.props.todo;
+		const { id, title } = this.props.todo;
 
 		return (
 
@@ -24,9 +24,9 @@ export class TodoItem extends Component {
 			<div style={this.getStyle()}>
 				<p>
 					{/* On change pass event to Todo.js, then to App.js */}
-					<input type="checkbox" onChange={this.props.markComplete.bind(this, Id)} />
-					{ ' ' } { Title }
-					<button style={btnStyle} onClick={this.props.delTodo.bind(this, Id)}>X</button>
+					<input type="checkbox" onChange={this.props.markComplete.bind(this, id)} />
+					{ ' ' } { title }
+					<button style={btnStyle} onClick={this.props.delTodo.bind(this, id)}>X</button>
 				</p>
 			</div>
 		)
@@ -36,7 +36,9 @@ export class TodoItem extends Component {
 // PropTypes
 TodoItem.propTypes = {
 	// object!
-	todo: PropTypes.object.isRequired
+	todo: PropTypes.object.isRequired,
+	markComplete: PropTypes.func.isRequired,
+	delTodo: PropTypes.func.isRequired,
 }
 
 const btnStyle = {
